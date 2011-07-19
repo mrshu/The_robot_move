@@ -14,7 +14,7 @@ ID_DOWNRIGHT = 9
 
 class Arrows(wx.Frame):
     def __init__(self, parent, id, title):
-        wx.Frame.__init__(self, None, wx.ID_ANY, 'Arrows', size=(220, 430))
+        wx.Frame.__init__(self, None, wx.ID_ANY, 'Arrows', size=(220, 230))
 
         
 
@@ -72,12 +72,12 @@ class Arrows(wx.Frame):
         vbox = wx.BoxSizer(wx.VERTICAL)
 
         
-        wx.TextCtrl(self, style=wx.TE_RIGHT)
-        wx.TextCtrl(self, style=wx.TE_RIGHT)
-        wx.TextCtrl(self, style=wx.TE_RIGHT)
+       #wx.TextCtrl(self, style=wx.TE_RIGHT)
+       #wx.TextCtrl(self, style=wx.TE_RIGHT)
+       #wx.TextCtrl(self, style=wx.TE_RIGHT)
 
-        wx.TextCtrl(self, style=wx.TE_RIGHT)
-        gs = wx.GridSizer(6, 6, 5, 5)
+       #wx.TextCtrl(self, style=wx.TE_RIGHT)
+        gs = wx.GridSizer(3, 3, 5, 5)
 
         gs.AddMany( [
             (wx.BitmapButton(self, id = ID_UPLEFT, bitmap=imageUPLEFT,
@@ -97,11 +97,8 @@ class Arrows(wx.Frame):
             (wx.BitmapButton(self, id = ID_RIGHT, bitmap=imageRIGHT,
                 pos=(133, 69), size = (imageRIGHT.GetWidth()+5, imageRIGHT.GetHeight()+5))),
             (wx.BitmapButton(self, id = ID_DOWNRIGHT, bitmap=imageDOWNRIGHT,
-                pos=(133, 133), size = (imageDOWNRIGHT.GetWidth()+5, imageDOWNRIGHT.GetHeight()+5))),
-            (wx.StaticText(self, -1, "Motor A:", (5,260))),
-            (wx.StaticText(self, -1, "Motor B:", (5,290))),
-            (wx.StaticText(self, -1, "Motor C:", (5,320))),
-            (wx.StaticText(self, -1, "Motor D:", (5,350)))])
+                pos=(133, 133), size = (imageDOWNRIGHT.GetWidth()+5, imageDOWNRIGHT.GetHeight()+5)))
+            ])
 
         vbox.Add(gs, proportion=1, flag=wx.EXPAND)
         self.SetSizer(vbox)
